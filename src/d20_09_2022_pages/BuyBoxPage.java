@@ -19,7 +19,6 @@ public class BuyBoxPage {
 //		prema trazenoj vrednosti.
 //		metodu koja skrola do ovog dela stranice
 
-
 	private WebDriver driver;
 	private WebDriverWait wait;
 
@@ -27,29 +26,30 @@ public class BuyBoxPage {
 		this.driver = driver;
 		this.wait = wait;
 	}
-	 public WebElement getQuantityInput() {
-		 return driver.findElement(By.id("quantity_wanted"));
-	 }
-	 public WebElement getSizeSelect() {
-		 return driver.findElement(By.id("uniform-group_1"));
-	 }
-	 public WebElement getAddToCartButton() {
-		 return driver.findElement(By.name("Submit"));
-	 }
-	 public WebElement getAddToWishlistButton() {
-		 return driver.findElement(By.id("wishlist_button"));
-	 }
-	 public WebElement getElementByColorLink(String color) {
-		 return driver.findElement(By.xpath("//*[@title='"+ color +"']"));
-	 }
 
-	public void getScrollToByBoxFormElement() {
+	public WebElement getQuantityInput() {
+		return driver.findElement(By.id("quantity_wanted"));
+	}
+
+	public WebElement getSizeSelect() {
+		return driver.findElement(By.id("group_1"));
+	}
+
+	public WebElement getAddToCartButton() {
+		return driver.findElement(By.name("Submit"));
+	}
+
+	public WebElement getAddToWishlistButton() {
+		return driver.findElement(By.id("wishlist_button"));
+	}
+
+	public WebElement getElementByColorLink(String color) {
+		return driver.findElement(By.xpath("//*[@title='" + color + "']"));
+	}
+
+	public void scrollToByBoxFormElement() {
 		new Actions(this.driver).moveToElement(
 				driver.findElement(By.id("buy_block"))).perform();
 	}
-	
-	 
-	 
-	
-	
+
 }

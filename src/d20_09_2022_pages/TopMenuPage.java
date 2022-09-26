@@ -3,6 +3,7 @@ package d20_09_2022_pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TopMenuPage {
@@ -30,11 +31,21 @@ public class TopMenuPage {
 	public WebElement getTShirtsLink() {
 		return driver.findElement(By.linkText("T-shirts"));
 	}
-	public WebElement getSubmenuForWomen() {
+	public WebElement getWomenSubmenu() {
 		return driver.findElement(By.xpath("//*[@title='Tops']/../.."));
 	}
-	
-	public WebElement getSubmenuForDresses() {
+	public WebElement getDressesSubmenu() {
 		return driver.findElement(By.xpath("//*[@title='Casual Dresses']/../.."));
 	}
+	public void waitWomanSubmenuVisibility() {
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(
+						By.xpath("//*[@title='Tops']/../..")));
+	}
+	public void waitDressesSubmenuVisibility() {
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(
+						"//*[@title='Casual Dresses']/../..")));
+	}
+
 }

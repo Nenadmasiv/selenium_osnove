@@ -41,21 +41,12 @@ public class LayerCartPage {
 	public WebElement getProductTotalPriceElement() {
 		return driver.findElement(By.id("layer_cart_product_price"));
 	}
-	public void getWaitForElementToBeVisible() {
+	public void waitForElementVisibility() {
 		this.wait.until(ExpectedConditions.visibilityOf(getProductAttributeElement()));
 	}
-	public void getWaitForElementToBeInvisible() {
+	public void waitForElementInvisibility() {
 		this.wait.until(ExpectedConditions.invisibilityOf(getProductAttributeElement()));
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
